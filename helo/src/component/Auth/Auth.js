@@ -5,6 +5,8 @@ class Auth extends Component {
     return (
       <div className="auth">
         <div>Auth Component</div>
+        <input className="input username" placeholder="username" />
+        <input className="input password" placeholder="password" />
       </div>
     );
   }
