@@ -1,10 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Nav.css';
+import { connect } from 'react-redux';
+import { username, profilePic } from '../../ducks/reducer';
+
+//Reminder: Returns random text.
+function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  
+    for (var i = 0; i < 5; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+  
+    return text;
+  }
+
+const icon = () => {
+    return makeid();
+}
 
 const Nav = () => {
     return (
         <div className="nav">
-            <div>Nav Component</div>
+            <img className="user-icon" src={`https://robohash.org/${icon}.png`} />
             <Link to="/dashboard" className="link">Home</Link>
             <Link to="/new" className="link">New Post</Link>
             <Link to="/" className="link">Logout</Link>
@@ -12,5 +30,11 @@ const Nav = () => {
     )
 }
 
-export default Nav;
+function mapStateToProps(){
+    // const { username, profilePic } = this.props;
+
+}
+
+
+export default connect(mapStateToProps)(Nav);
 

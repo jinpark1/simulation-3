@@ -1,0 +1,18 @@
+.nav {
+    background-color: pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+}
+
+.link {
+    display: block;
+    padding: 25px 0px;
+}
+
+.user-icon {
+    width: 100px;
+    height: 100px;
+}
