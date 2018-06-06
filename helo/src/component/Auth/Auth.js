@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { username, id, profilePic } from '../../ducks/reducer';
+import { Link } from 'react-router-dom';
+
+
 
 class Auth extends Component {
     constructor(){
@@ -54,13 +57,17 @@ class Auth extends Component {
         return (
          <div className="auth">
          <div>Auth Component</div>
-         <input className="input username" placeholder="username" ref="username" />
+         <input className="input username" placeholder="username" ref="username"  />
          <input className="input password" placeholder="password" ref="password" />
          <a href='#' onClick={this.register}>Register</a>
-         <a href='#' onClick={this.login}>Login</a>
+         <Link to='/dashboard' onClick={this.login}>Login</Link>
          </div>
          );
     }
 }
 
-export default connect(null, { id, username, profilePic })(Auth);
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(null, { username, profilePic })(Auth);

@@ -21,12 +21,6 @@ function reducer(state = initialState, action){
     }
 };
 
-export function id(id, username, profilePic){
-    return {
-        type: STORE_ID,
-        payload: id
-    }
-}
 
 export function username(username) {
     return {
