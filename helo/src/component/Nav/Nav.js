@@ -19,12 +19,13 @@ const icon = () => {
     return makeid();
 }
 
-const Nav = () => {
+const Nav = (props) => {
     return (
         <div className="nav">
-            {console.log('Nav--------', this.props)}
+            {console.log('Nav--------', props)}
             <img className="user-icon" src={`https://robohash.org/${icon}.png`} />
-            <div>Show user Name</div>
+            <div>{props.user.username}</div>
+            <div>{props.user.id}</div>
             <Link to="/dashboard" className="link">Home</Link>
             <Link to="/new" className="link">New Post</Link>
             <Link to="/" className="link">Logout</Link>
